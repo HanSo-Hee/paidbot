@@ -13,7 +13,7 @@ from handlers.helpers import str_to_b64
 async def reply_forward(message: Message, file_id: int):
     try:
         await message.reply_text(
-            f"Files will be deleted in {Config.AUTO_DELETE_TIME} minutes to avoid copyright issues. Please forward and save them.",
+            f"Files will be deleted in {Config.AUTO_DELETE_TIME} seconds to avoid copyright issues. Please forward and save them.",
             disable_web_page_preview=True,
             quote=True
         )
