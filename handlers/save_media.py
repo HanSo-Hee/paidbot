@@ -35,7 +35,6 @@ async def forward_to_channel(bot: Client, message: Message, editable: Message):
             )
         return await forward_to_channel(bot, message, editable)
 
-
 async def save_batch_media_in_channel(bot: Client, editable: Message, message_ids: list):
     try:
         message_ids_str = ""
@@ -83,6 +82,9 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
 
 
 async def save_media_in_channel(bot: Client, editable: Message, message: Message):
+    if message.from_user.id not in Config.AUTHORIZED_USERS:
+        return await editable.edit("You are not authorized to store files.")
+
     try:
         forwarded_msg = await message.forward(Config.DB_CHANNEL)
         file_er_id = str(forwarded_msg.id)
@@ -129,3 +131,4 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
                 ]
             )
         )
+
