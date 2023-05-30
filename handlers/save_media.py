@@ -14,8 +14,7 @@ from handlers.helpers import str_to_b64
 
 async def forward_to_channel(bot: Client, message: Message, editable: Message):
     try:
-        if message.from_user.id == Config.BOT_OWNER or editable.from_user.id == Config.BOT_OWNER:
-            # Check if the user is the admin or the bot owner
+        if message.from_user.id == Config.BOT_OWNER or message.from_user.id in Config.AUTHORIZED_USERS:
             __SENT = await message.forward(Config.DB_CHANNEL)
             return __SENT
         else:
@@ -39,8 +38,7 @@ async def forward_to_channel(bot: Client, message: Message, editable: Message):
 
 async def save_batch_media_in_channel(bot: Client, editable: Message, message_ids: list):
     try:
-        if editable.from_user.id != Config.BOT_OWNER:
-            # Check if the user is the bot owner
+        if editable.from_user.id not in [Config.BOT_OWNER] + Config.AUTHORIZED_USERS:
             await editable.edit("You are not authorized to store files.")
             return
 
@@ -91,7 +89,6 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
 async def save_media_in_channel(bot: Client, editable: Message, message: Message):
     try:
         if editable.from_user.id != Config.BOT_OWNER:
-            # Check if the user is the bot owner
             await editable.edit("You are not authorized to store files.")
             return
 
