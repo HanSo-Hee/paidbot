@@ -14,8 +14,12 @@ from handlers.helpers import str_to_b64
 
 async def forward_to_channel(bot: Client, message: Message, editable: Message):
     try:
-        __SENT = await message.forward(Config.DB_CHANNEL)
-        return __SENT
+        if message.from_user.id == Config.BOT_OWNER:  # Check if the user is the admin
+            __SENT = await message.forward(Config.DB_CHANNEL)
+            return __SENT
+        else:
+            await editable.edit("You are not authorized to store files.")
+            return None
     except FloodWait as sl:
         if sl.value > 45:
             await asyncio.sleep(sl.value)
