@@ -38,6 +38,10 @@ async def forward_to_channel(bot: Client, message: Message, editable: Message):
 
 async def save_batch_media_in_channel(bot: Client, editable: Message, message_ids: list):
     try:
+        if editable.from_user.id != Config.BOT_OWNER:  # Check if the user is the admin
+            await editable.edit("You are not authorized to store files.")
+            return
+
         message_ids_str = ""
         for message in (await bot.get_messages(chat_id=editable.chat.id, message_ids=message_ids)):
             sent_message = await forward_to_channel(bot, message, editable)
@@ -58,10 +62,7 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
             f"**Batch Files Stored in my Database!**\n\nHere is the Permanent Link of your files: {share_link} \n\n"
             f"Just Click the link to get your files!",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Open Link", url=share_link)]
-#                  [InlineKeyboardButton("Bots Channel", url="https://t.me/TeleRoidGroup"),
-#                   InlineKeyboardButton("Support Group", url="https://t.me/TeleRoid14")]
-                ]
+                [[InlineKeyboardButton("Open Link", url=share_link)]]
             ),
             disable_web_page_preview=True
         )
@@ -87,6 +88,10 @@ async def save_batch_media_in_channel(bot: Client, editable: Message, message_id
 
 async def save_media_in_channel(bot: Client, editable: Message, message: Message):
     try:
+        if editable.from_user.id != Config.BOT_OWNER:  # Check if the user is the admin
+            await editable.edit("You are not authorized to store files.")
+            return
+
         forwarded_msg = await message.forward(Config.DB_CHANNEL)
         file_er_id = str(forwarded_msg.id)
         await forwarded_msg.reply_text(
@@ -98,10 +103,7 @@ async def save_media_in_channel(bot: Client, editable: Message, message: Message
             f"Here is the Permanent Link of your file: {share_link} \n\n"
             "Just Click the link to get your file!",
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton("Open Link", url=share_link)],
-#                  [InlineKeyboardButton("Bots Channel", url="https://t.me/TeleRoidGroup"),
-#                   InlineKeyboardButton("Support Group", url="https://t.me/TeleRoid14")]
-                ]
+                [[InlineKeyboardButton("Open Link", url=share_link)]]
             ),
             disable_web_page_preview=True
         )
