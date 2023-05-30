@@ -1,9 +1,7 @@
 # (c) @PredatorHackerzZ
 
 import asyncio
-from typing import (
-    Union
-)
+from typing import Union
 from configs import Config
 from pyrogram import Client
 from pyrogram.errors import FloodWait, UserNotParticipant
@@ -38,7 +36,7 @@ async def handle_force_sub(bot: Client, cmd: Message):
             return 400
     except UserNotParticipant:
         try:
-            invite_link = await get_invite_link(bot, chat_id=channel_chat_id)
+            invite_link = await get_invite_link(bot, chat_id=channel_chat_id)  # Pass the chat_id argument here
         except Exception as err:
             print(f"Unable to do Force Subscribe to {Config.UPDATES_CHANNEL}\n\nError: {err}")
             return 200
