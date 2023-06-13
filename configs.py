@@ -21,25 +21,47 @@ class Config(object):
     OTHER_USERS_CAN_SAVE_FILE = bool(os.environ.get("OTHER_USERS_CAN_SAVE_FILE", True))
     AUTO_DELETE_TIME = int(os.environ.get("AUTO_DELETE_TIME", "30"))
     AUTHORIZED_USERS = [int(user_id) for user_id in os.environ.get("AUTHORIZED_USERS", "").split() if user_id]
+#     ABOUT_BOT_TEXT = f"""
+# This is a Permanent FileStore Bot. 
+# Send Me any Media or File. I can Work In Channel too. Add Me to Channel with Edit Permission, I will add save Uploaded File in Channel and Share a Shareable Link. 
+
+# ╭────[ **🔅FɪʟᴇSᴛᴏʀᴇBᴏᴛ🔅**]────⍟
+# │
+# ├🔸🤖 **My Name:** [𝐅𝐢𝐥𝐞 𝐒𝐭𝐨𝐫𝐞 𝐁𝐨𝐭](https://t.me/{BOT_USERNAME})
+# │
+# ├🔸📝 **Language:** [𝐏𝐲𝐭𝐡𝐨𝐧𝟑](https://www.python.org)
+# │
+# ├🔹📚 **Library:** [𝐏𝐲𝐫𝐨𝐠𝐫𝐚𝐦](https://docs.pyrogram.org)
+# │
+# ├🔹📡 **Hosted On:** [𝐇𝐞𝐫𝐨𝐤𝐮](https://heroku.com)
+# │
+# ├🔸👨‍💻 **Developer:** [@𝐏𝐫𝐞𝐝𝐚𝐭𝐨𝐫](https://t.me/OwnYourBotz) 
+# │
+# ├🔹👥 **Bot Support:** [𝐒𝐮𝐩𝐩𝐨𝐫𝐭](https://t.me/TeleRoid14)
+# │
+# ├🔸🔔 **Bot Updates:** [𝐔𝐩𝐝𝐚𝐭𝐞𝐬](https://t.me/TeleRoidGroup)
+# │
+# ╰──────[ 😎 ]───────────⍟
+# """
     ABOUT_BOT_TEXT = f"""
 This is a Permanent FileStore Bot. 
 Send Me any Media or File. I can Work In Channel too. Add Me to Channel with Edit Permission, I will add save Uploaded File in Channel and Share a Shareable Link. 
 
 ╭────[ **🔅FɪʟᴇSᴛᴏʀᴇBᴏᴛ🔅**]────⍟
 │
-├🔸🤖 **My Name:** [𝐅𝐢𝐥𝐞 𝐒𝐭𝐨𝐫𝐞 𝐁𝐨𝐭](https://t.me/{BOT_USERNAME})
+├🔸🤖 **My Name:** [FileStorage Bot](https://t.me/{BOT_USERNAME})
 │
-├🔸📝 **Language:** [𝐏𝐲𝐭𝐡𝐨𝐧𝟑](https://www.python.org)
+├🔸📝 **Language:** [Python 3](https://www.python.org)
 │
-├🔹📚 **Library:** [𝐏𝐲𝐫𝐨𝐠𝐫𝐚𝐦](https://docs.pyrogram.org)
+├🔹📚 **Library:** [Pyrogram](https://docs.pyrogram.org)
 │
-├🔹📡 **Hosted On:** [𝐇𝐞𝐫𝐨𝐤𝐮](https://heroku.com)
+├🔹📡 **Hosted On:** [Heroku](https://heroku.com)
 │
-├🔸👨‍💻 **Developer:** [@𝐏𝐫𝐞𝐝𝐚𝐭𝐨𝐫](https://t.me/OwnYourBotz) 
+├🔸👨‍💻 **Developer:** [@Owner](https://t.me/Binod_Binod1) 
 │
-├🔹👥 **Bot Support:** [𝐒𝐮𝐩𝐩𝐨𝐫𝐭](https://t.me/TeleRoid14)
+├🔹👥 **Bot Support:** [Support Group](https://t.me/+Sve_5lDO4SUxMjJl)
 │
-├🔸🔔 **Bot Updates:** [𝐔𝐩𝐝𝐚𝐭𝐞𝐬](https://t.me/TeleRoidGroup)
+├🔸🔔 **Bot Updates:** [Updates Channel](https://t.me/Filmy_Night)
 │
 ╰──────[ 😎 ]───────────⍟
 """
@@ -50,14 +72,14 @@ Send Me any Media or File. I can Work In Channel too. Add Me to Channel with Edi
 
 [Donate Me](https://t.me/DonateXrobot)
 """
-    HOME_TEXT = """
-Hello, [{}](tg://user?id={})\n\nThis is a Permanent **FileStore Bot**.
+#     HOME_TEXT = """
+# Hello, [{}](tg://user?id={})\n\nThis is a Permanent **FileStore Bot**.
 
-How to Use Bot & its Benefits??
+# How to Use Bot & its Benefits??
 
-📢 Send me any File, and it will be uploaded in My Database, and you will get the File Link.
+# 📢 Send me any File, and it will be uploaded in My Database, and you will get the File Link.
 
-⚠️ Benefits: If you have a Telegram Movie Channel or any Copyright Channel, then it's useful for daily usage. You can send me your file, and I will send a permanent link to you, keeping your channel safe from **Copyright Infringement** issues. I support channels as well. You can check the **About Bot** section.
+# ⚠️ Benefits: If you have a Telegram Movie Channel or any Copyright Channel, then it's useful for daily usage. You can send me your file, and I will send a permanent link to you, keeping your channel safe from **Copyright Infringement** issues. I support channels as well. You can check the **About Bot** section.
 
-❌ **PORNOGRAPHY CONTENTS** are strictly prohibited and will result in a permanent ban.
-"""
+# ❌ **PORNOGRAPHY CONTENTS** are strictly prohibited and will result in a permanent ban.
+# """
