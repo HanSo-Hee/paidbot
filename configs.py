@@ -59,7 +59,7 @@ Send Me any Media or File. I can Work In Channel too. Add Me to Channel with Edi
 │
 ├🔸👨‍💻 **Developer:** [@Owner](https://t.me/Binod_Binod1) 
 │
-├🔹👥 **Bot Support:** [Support Group](https://t.me/+Sve_5lDO4SUxMjJl)
+├🔹👥 **Bot Support:** [Support Group](https://t.me/+5QByEUGVImAwY2E1)
 │
 ├🔸🔔 **Bot Updates:** [Updates Channel](https://t.me/Filmy_Night)
 │
