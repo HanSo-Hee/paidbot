@@ -74,7 +74,7 @@ async def start(bot: Client, cmd: Message):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton("Owner", url="https://t.me/OwnYourBotz")
+                        InlineKeyboardButton("Owner", url=f"https://t.me/{Config.CHANNEL_USERNAME}")
                     ]
 #                     [
 #                         InlineKeyboardButton("About Bot", callback_data="aboutbot"),
